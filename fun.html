@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>R4T | Fun_Zone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="nav-container">
+        <div class="nav-title">R4T - [Bug_Hunter_v1.0]</div>
+        <a href="index.html" class="btn-r4t">Назад</a>
+    </header>
+
+    <div class="content" id="clicker-window">
+        <div class="window-header"><span>Critical_Error_Clicker.exe</span><span>✕</span></div>
+        <p style="margin-top: 20px;">КЛИКАЙ ПО КНОПКЕ, ЧТОБЫ ИСПРАВИТЬ ОШИБКИ!</p>
+        <div class="counter" id="score">0</div>
+        <div class="click-btn" onclick="addPoint()">ERROR</div>
+        <p id="rank" style="font-weight: bold; color: #000080; margin-top: 10px;">Звание: Ламер</p>
+    </div>
+
+    <script>
+        let count = 0;
+        function addPoint() {
+            count++;
+            document.getElementById('score').innerText = count;
+            
+            let rank = "Ламер";
+            if(count > 50) rank = "Скрипт-кидди";
+            if(count > 150) rank = "Начинающий хакер";
+            if(count > 500) rank = "R4T MEMBER";
+            if(count > 1000) rank = "ГЕНИЙ ИИ";
+            
+            document.getElementById('rank').innerText = "Звание: " + rank;
+        }
+    </script>
+</body>
+</html>
