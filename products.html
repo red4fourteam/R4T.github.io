@@ -10,25 +10,40 @@
         <div class="nav-title">R4T - [Asset_Manager]</div>
         <div>
             <a href="index.html" class="btn-r4t">На главную</a>
-            <a href="login.html" class="btn-r4t">Личный кабинет</a>
+            <a href="info.html" class="btn-r4t">Информация</a>
+            <a href="fun.html" class="btn-r4t">Прикольчики</a>
         </div>
     </header>
 
     <div class="content">
-        <div class="window-header">Download_Center.dll</div>
+        <div class="window-header">
+            <span>Library_Explorer.dll</span>
+            <span>✕</span>
+        </div>
+        
         <h1 class="main-title">БИБЛИОТЕКА ПРОДУКТОВ</h1>
         
         <div class="product-grid">
+            <!-- R4T INSTALLER -->
             <div class="product-box">
-                <h3 style="color: #000080;">R4T_Installer.exe</h3>
-                <p style="font-size: 0.8rem;">Версия: 1.0.4<br>Размер: 14.5 МБ</p>
-                <a href="#" class="btn-r4t" style="display: block; text-align: center;">СКАЧАТЬ</a>
+                <h2 style="color: #cc0000; margin-top: 0; font-family: 'Courier Prime', monospace;">R4T INSTALLER</h2>
+                <p style="font-size: 1rem; line-height: 1.4; color: #333;">
+                    Единая точка входа. Скачайте инсталлер, чтобы получить полный доступ ко всей библиотеке софта и автоматическим обновлениям.
+                </p>
+                <div style="margin-top: 25px; border-top: 1px solid #dcdcdc; padding-top: 15px;">
+                    <a href="#" class="btn-r4t" style="display: block; text-align: center;">СКАЧАТЬ .EXE (14.5 MB)</a>
+                </div>
             </div>
 
-            <div class="product-box" style="background: #f0f0f0;">
-                <h3 style="color: #808080;">Core_Builder.msi</h3>
-                <p style="font-size: 0.8rem; color: #808080;">Доступ ограничен.<br>Требуется авторизация.</p>
-                <span class="btn-r4t" style="display: block; text-align: center; color: #808080;">LOCKED</span>
+            <!-- CORE BUILDER (LOCKED) -->
+            <div class="product-box" style="background: #f5f5f5; border-color: #b0b0b0;">
+                <h2 style="color: #808080; margin-top: 0; font-family: 'Courier Prime', monospace;">CORE BUILDER</h2>
+                <p style="font-size: 1rem; line-height: 1.4; color: #808080;">
+                    Профессиональный конструктор модулей. В данный момент доступ ограничен для группы бета-тестировщиков.
+                </p>
+                <div style="margin-top: 25px; border-top: 1px solid #dcdcdc; padding-top: 15px;">
+                    <span class="btn-r4t" style="display: block; text-align: center; color: #808080; cursor: not-allowed;">LOCKED [BETA]</span>
+                </div>
             </div>
         </div>
     </div>
