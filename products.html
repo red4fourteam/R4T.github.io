@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
+    <title>R4T | БИБЛИОТЕКА ПРОДУКТОВ</title>
     <link rel="stylesheet" href="style.css">
-    <title>R4T | PRODUCTS</title>
 </head>
 <body>
-    <header>
-        <h1>БИБЛИОТЕКА ПРОДУКТОВ R4T</h1>
-        <a href="index.html" class="nav-btn">НАЗАД</a>
+    <header class="nav-container">
+        <div class="nav-title">R4T ASSETS</div>
+        <a href="index.html" class="btn-r4t">НА ГЛАВНУЮ</a>
+        <a href="home.html" class="btn-r4t">ЛИЧНЫЙ КАБИНЕТ</a>
     </header>
-    <div class="container">
-        <div class="product-card">
-            <h3>R4T Installer</h3>
-            <p>Единый установщик для всех наших программ.</p>
-            <!-- Ссылку ниже заменим на прямую ссылку на твой .exe файл позже -->
-            <a href="#" class="nav-btn" style="background: red; color: white;">СКАЧАТЬ БИБЛИОТЕКУ</a>
+
+    <div class="content">
+        <h1 class="main-title">ДОСТУПНЫЕ ПРОДУКТЫ</h1>
+        <p class="description">Централизованный доступ к нашему программному обеспечению и инструментам автоматизации.</p>
+
+        <!-- Сетка с продуктами -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px;">
+            
+            <!-- Карточка Инсталлера -->
+            <div class="product-box" style="width: 350px; text-align: left;">
+                <h2 style="color: #ff0000; margin-top: 0;">R4T INSTALLER [v1.0]</h2>
+                <p style="color: #8b949e; font-size: 0.9rem;">
+                    Универсальное решение для управления всеми продуктами RED FOUR TEAM. 
+                    Автоматическая установка, обновление и проверка зависимостей в один клик.
+                </p>
+                <div style="border-top: 1px solid #440000; padding-top: 20px; margin-top: 20px;">
+                    <a href="#" class="btn-r4t" style="width: 80%; text-align: center;">СКАЧАТЬ БИБЛИОТЕКУ</a>
+                </div>
+            </div>
+
+            <!-- Будущий продукт (заглушка для вида) -->
+            <div class="product-box" style="width: 350px; text-align: left; opacity: 0.6;">
+                <h2 style="color: #555; margin-top: 0;">CORE BUILDER [BETA]</h2>
+                <p style="color: #555; font-size: 0.9rem;">
+                    Конструктор модульных систем. Доступ будет открыт для авторизованных пользователей в ближайшее время.
+                </p>
+                <div style="border-top: 1px solid #220000; padding-top: 20px; margin-top: 20px;">
+                    <span class="btn-r4t" style="width: 80%; text-align: center; border-color: #333; cursor: not-allowed;">В РАЗРАБОТКЕ</span>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
