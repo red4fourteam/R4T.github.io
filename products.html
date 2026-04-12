@@ -2,47 +2,48 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>R4T | БИБЛИОТЕКА ПРОДУКТОВ</title>
+    <title>R4T | ASSETS</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="nav-container">
         <div class="nav-title">R4T ASSETS</div>
         <a href="index.html" class="btn-r4t">НА ГЛАВНУЮ</a>
-        <a href="home.html" class="btn-r4t">ЛИЧНЫЙ КАБИНЕТ</a>
+        <a href="login.html" class="btn-r4t">ЛИЧНЫЙ КАБИНЕТ</a>
     </header>
 
     <div class="content">
-        <h1 class="main-title">ДОСТУПНЫЕ ПРОДУКТЫ</h1>
-        <p class="description">Централизованный доступ к нашему программному обеспечению и инструментам автоматизации.</p>
-
-        <!-- Сетка с продуктами -->
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 50px;">
-            
-            <!-- Карточка Инсталлера -->
-            <div class="product-box" style="width: 350px; text-align: left;">
-                <h2 style="color: #ff0000; margin-top: 0;">R4T INSTALLER [v1.0]</h2>
-                <p style="color: #8b949e; font-size: 0.9rem;">
-                    Универсальное решение для управления всеми продуктами RED FOUR TEAM. 
-                    Автоматическая установка, обновление и проверка зависимостей в один клик.
+        <h1 class="main-title">БИБЛИОТЕКА ПРОДУКТОВ</h1>
+        
+        <div class="product-grid">
+            <!-- Карточка 1 -->
+            <div class="product-box">
+                <h2 style="color: #ff0000; margin: 0;">R4T INSTALLER</h2>
+                <p style="font-size: 0.9rem; color: #aaa; margin: 20px 0;">
+                    Единая точка входа. Скачайте инсталлер, чтобы получить доступ ко всей библиотеке софта R4T.
                 </p>
-                <div style="border-top: 1px solid #440000; padding-top: 20px; margin-top: 20px;">
-                    <a href="#" class="btn-r4t" style="width: 80%; text-align: center;">СКАЧАТЬ БИБЛИОТЕКУ</a>
-                </div>
+                <a href="#" class="btn-r4t" style="width: 80%; padding: 10px;">СКАЧАТЬ .EXE</a>
             </div>
 
-            <!-- Будущий продукт (заглушка для вида) -->
-            <div class="product-box" style="width: 350px; text-align: left; opacity: 0.6;">
-                <h2 style="color: #555; margin-top: 0;">CORE BUILDER [BETA]</h2>
-                <p style="color: #555; font-size: 0.9rem;">
-                    Конструктор модульных систем. Доступ будет открыт для авторизованных пользователей в ближайшее время.
+            <!-- Карточка 2 -->
+            <div class="product-box" style="opacity: 0.5;">
+                <h2 style="color: #555; margin: 0;">CORE BUILDER</h2>
+                <p style="font-size: 0.9rem; color: #555; margin: 20px 0;">
+                    Инструмент находится на стадии закрытого тестирования.
                 </p>
-                <div style="border-top: 1px solid #220000; padding-top: 20px; margin-top: 20px;">
-                    <span class="btn-r4t" style="width: 80%; text-align: center; border-color: #333; cursor: not-allowed;">В РАЗРАБОТКЕ</span>
-                </div>
+                <span class="btn-r4t" style="width: 80%; padding: 10px; border-color: #333;">LOCKED</span>
             </div>
-
         </div>
     </div>
+
+    <button class="xp-toggle" onclick="toggleXP()">РЕЖИМ WIN.XP</button>
+
+    <script>
+        function toggleXP() {
+            document.body.classList.toggle('xp-mode');
+            localStorage.setItem('xpMode', document.body.classList.contains('xp-mode'));
+        }
+        if (localStorage.getItem('xpMode') === 'true') { document.body.classList.add('xp-mode'); }
+    </script>
 </body>
 </html>
