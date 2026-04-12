@@ -1,105 +1,45 @@
-/* Шрифты для атмосферы */
 @import url('https://googleapis.com');
 
 body {
-    margin: 0;
-    padding: 0;
-    /* Та самая Безмятежность */
+    margin: 0; padding: 0;
     background: url('https://wikimedia.org') no-repeat center center fixed;
-    background-size: cover;
-    font-family: "Tahoma", "Segoe UI", sans-serif;
-    color: black;
+    background-size: cover; font-family: "Tahoma", "Segoe UI", sans-serif; color: black;
 }
 
-/* Шапка в стиле заголовка окна */
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    display: flex; justify-content: space-between; align-items: center; padding: 5px 15px;
     background: linear-gradient(to bottom, #0058e6 0%, #3a93ff 10%, #0058e6 100%);
-    border-bottom: 2px solid #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    border-bottom: 2px solid #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
-.nav-title {
-    color: white;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px #000;
-    font-size: 1.5rem;
-}
+.nav-title { color: white; font-weight: bold; text-shadow: 1px 1px 2px #000; font-size: 1.2rem; }
 
-/* Кнопки как в классическом интерфейсе */
 .btn-r4t {
-    background: #eeeeee;
-    border: 2px solid;
-    border-color: #ffffff #808080 #808080 #ffffff;
-    color: black;
-    padding: 8px 20px;
-    text-decoration: none;
-    margin: 5px;
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: bold;
+    background: #eeeeee; border: 2px solid; border-color: #ffffff #808080 #808080 #ffffff;
+    color: black; padding: 5px 15px; text-decoration: none; margin: 3px;
+    display: inline-block; font-size: 0.85rem; font-weight: bold; cursor: pointer;
 }
 
-.btn-r4t:active {
-    border-color: #808080 #ffffff #ffffff #808080;
-    padding: 9px 19px 7px 21px;
-}
+.btn-r4t:active { border-color: #808080 #ffffff #ffffff #808080; padding: 6px 14px 4px 16px; }
 
-.btn-r4t:hover {
-    color: #0000ff;
-    text-decoration: underline;
-}
-
-/* Контентная зона */
 .content {
-    max-width: 900px;
-    margin: 40px auto;
-    background: #ece9d8;
-    border: 2px solid #0054e3;
-    border-radius: 8px 8px 0 0;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-    padding-bottom: 20px;
+    max-width: 800px; margin: 30px auto; background: #ece9d8;
+    border: 2px solid #0054e3; border-radius: 5px 5px 0 0;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.4);
 }
 
 .window-header {
     background: linear-gradient(to right, #0054e3 0%, #27c1ff 100%);
-    padding: 5px 15px;
-    color: white;
-    font-weight: bold;
-    border-radius: 6px 6px 0 0;
-    text-align: left;
+    padding: 3px 10px; color: white; font-weight: bold; font-size: 0.9rem;
+    display: flex; justify-content: space-between;
 }
 
-.main-title {
-    font-family: 'Courier Prime', monospace;
-    font-size: 3rem;
-    color: #000080;
-    margin: 30px 0;
-    text-align: center;
+/* КЛИКЕР СТИЛЬ */
+#clicker-window { text-align: center; padding: 20px; }
+.counter { font-family: 'Courier Prime', monospace; font-size: 3rem; color: #cc0000; font-weight: bold; margin: 10px 0; }
+.click-btn {
+    width: 100px; height: 100px; border-radius: 50%; background: #ff0000;
+    border: 5px solid #800000; color: white; font-weight: bold; cursor: pointer;
+    box-shadow: 0 5px #600000; margin: 20px auto; display: flex; align-items: center; justify-content: center;
 }
-
-.description {
-    padding: 20px;
-    font-size: 1.1rem;
-    line-height: 1.5;
-    text-align: center;
-}
-
-/* Сетка продуктов */
-.product-grid {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
-.product-box {
-    background: white;
-    border: 1px solid #7f9db9;
-    padding: 15px;
-    width: 250px;
-    text-align: left;
-}
+.click-btn:active { box-shadow: 0 0 #600000; transform: translateY(5px); }
