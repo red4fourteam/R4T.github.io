@@ -1,62 +1,86 @@
-/* Подключаем шрифты с Google Fonts */
 @import url('https://googleapis.com');
 
 body {
     margin: 0;
     padding: 0;
     color: white;
-    /* Тот самый градиент: сверху почти черный, снизу темно-красный */
-    background: radial-gradient(circle at bottom, #4a0000 0%, #050000 70%, #000000 100%);
-    background-attachment: fixed; /* Чтобы фон не уезжал при скролле */
+    /* Улучшенный фон: более глубокий черный и кроваво-красный акцент снизу */
+    background: radial-gradient(circle at bottom, #2a0000 0%, #050000 80%, #000000 100%);
+    background-attachment: fixed;
     min-height: 100vh;
-    font-family: 'Roboto', sans-serif; /* Основной текст */
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
-/* Заголовки в стиле Bebas Neue */
-h1, h2, h3 {
-    font-family: 'Bebas+Neue', sans-serif;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+/* Линии с градиентом для стиля */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 10%; width: 1px; height: 100%;
+    background: linear-gradient(to bottom, transparent, #ff0000, transparent);
+    opacity: 0.2;
 }
 
-/* Навигация и кнопки */
+/* Шапка с кнопками сверху */
 .nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачная плашка сверху */
-    border-bottom: 1px solid #600000;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #ff0000;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
 }
 
+.nav-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: #ff0000;
+    margin-right: 40px;
+    letter-spacing: 2px;
+}
+
+/* Большие закругленные черные кнопки */
 .btn-r4t {
-    font-family: 'Roboto Slab', serif;
-    background: transparent;
-    border: 1px solid #ff0000;
+    font-family: 'Bebas Neue', sans-serif;
+    background: #000000; /* Фулл черный внутри */
+    border: 2px solid #ff0000;
     color: white;
-    padding: 12px 30px;
+    padding: 15px 40px; /* Большой размер */
     text-decoration: none;
-    margin: 10px;
+    margin: 0 10px;
     display: inline-block;
-    transition: 0.3s;
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+    border-radius: 50px; /* Сильное закругление */
+    font-size: 1.2rem;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: inset 0 0 10px rgba(255, 0, 0, 0.2);
 }
 
 .btn-r4t:hover {
     background: #ff0000;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
-    transform: translateY(-2px);
+    color: black;
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.8);
+    transform: scale(1.05);
 }
 
 .content {
-    max-width: 900px;
-    margin: 50px auto;
+    max-width: 1000px;
+    margin: 80px auto;
     text-align: center;
+    padding: 0 20px;
 }
 
-/* Карточка продукта на 4 странице */
-.product-box {
-    background: rgba(20, 0, 0, 0.6);
-    border: 1px solid #440000;
-    padding: 30px;
-    border-radius: 5px;
-    margin-top: 30px;
+/* Огромный заголовок Bebas Neue */
+.main-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+}
+
+.description {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: #cccccc;
+    font-weight: 300;
 }
