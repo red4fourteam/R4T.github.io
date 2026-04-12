@@ -1,6 +1,62 @@
-body { background: #0a0a0a; color: #fff; font-family: 'Courier New', monospace; margin: 0; }
-header { background: #1a1a1a; padding: 20px; border-bottom: 2px solid red; text-align: center; }
-.nav-btn { background: transparent; border: 1px solid red; color: red; padding: 10px 20px; cursor: pointer; text-decoration: none; margin: 5px; display: inline-block; }
-.nav-btn:hover { background: red; color: white; }
-.container { padding: 40px; text-align: center; }
-.product-card { border: 1px solid #333; padding: 20px; margin: 10px; display: inline-block; width: 250px; }
+/* Подключаем шрифты с Google Fonts */
+@import url('https://googleapis.com');
+
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    /* Тот самый градиент: сверху почти черный, снизу темно-красный */
+    background: radial-gradient(circle at bottom, #4a0000 0%, #050000 70%, #000000 100%);
+    background-attachment: fixed; /* Чтобы фон не уезжал при скролле */
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif; /* Основной текст */
+}
+
+/* Заголовки в стиле Bebas Neue */
+h1, h2, h3 {
+    font-family: 'Bebas+Neue', sans-serif;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Навигация и кнопки */
+.nav-container {
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачная плашка сверху */
+    border-bottom: 1px solid #600000;
+}
+
+.btn-r4t {
+    font-family: 'Roboto Slab', serif;
+    background: transparent;
+    border: 1px solid #ff0000;
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    margin: 10px;
+    display: inline-block;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+}
+
+.btn-r4t:hover {
+    background: #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+.content {
+    max-width: 900px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* Карточка продукта на 4 странице */
+.product-box {
+    background: rgba(20, 0, 0, 0.6);
+    border: 1px solid #440000;
+    padding: 30px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
