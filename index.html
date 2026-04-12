@@ -2,23 +2,32 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>R4T | Экосистема Разработки</title>
+    <title>R4T | MAIN</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="nav-container">
         <div class="nav-title">RED FOUR TEAM</div>
         <a href="products.html" class="btn-r4t">ПРОДУКТЫ</a>
-        <a href="home.html" class="btn-r4t">ЛИЧНЫЙ КАБИНЕТ</a>
+        <a href="login.html" class="btn-r4t">ЛИЧНЫЙ КАБИНЕТ</a>
     </header>
 
     <div class="content">
         <h1 class="main-title">МЫ — КОМАНДА РАЗРАБОТЧИКОВ</h1>
         <p class="description">
             Специализируемся на создании сложного ПО: от кастомных конструкторов инструментов безопасности 
-            до систем автоматизации. Мы предоставляем решения, которые расширяют границы возможного 
-            и открывают новые пути для масштабирования ваших цифровых активов.
+            до систем автоматизации. Мы предоставляем решения, которые расширяют границы возможного.
         </p>
     </div>
+
+    <button class="xp-toggle" onclick="toggleXP()">РЕЖИМ WIN.XP</button>
+
+    <script>
+        function toggleXP() {
+            document.body.classList.toggle('xp-mode');
+            localStorage.setItem('xpMode', document.body.classList.contains('xp-mode'));
+        }
+        if (localStorage.getItem('xpMode') === 'true') { document.body.classList.add('xp-mode'); }
+    </script>
 </body>
 </html>
