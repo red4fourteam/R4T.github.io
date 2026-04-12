@@ -2,32 +2,28 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>R4T | MAIN</title>
+    <title>R4T | Workstation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="nav-container">
-        <div class="nav-title">RED FOUR TEAM</div>
-        <a href="products.html" class="btn-r4t">ПРОДУКТЫ</a>
-        <a href="login.html" class="btn-r4t">ЛИЧНЫЙ КАБИНЕТ</a>
+        <div class="nav-title">RED FOUR TEAM - [Main_Module]</div>
+        <div>
+            <a href="products.html" class="btn-r4t">Продукты</a>
+            <a href="login.html" class="btn-r4t">Личный кабинет</a>
+        </div>
     </header>
 
     <div class="content">
+        <div class="window-header">R4T_Information_System.exe</div>
         <h1 class="main-title">МЫ — КОМАНДА РАЗРАБОТЧИКОВ</h1>
         <p class="description">
             Специализируемся на создании сложного ПО: от кастомных конструкторов инструментов безопасности 
             до систем автоматизации. Мы предоставляем решения, которые расширяют границы возможного.
         </p>
+        <div style="text-align: center;">
+             <img src="https://vercel.app" style="width: 50px; opacity: 0.5;">
+        </div>
     </div>
-
-    <button class="xp-toggle" onclick="toggleXP()">РЕЖИМ WIN.XP</button>
-
-    <script>
-        function toggleXP() {
-            document.body.classList.toggle('xp-mode');
-            localStorage.setItem('xpMode', document.body.classList.contains('xp-mode'));
-        }
-        if (localStorage.getItem('xpMode') === 'true') { document.body.classList.add('xp-mode'); }
-    </script>
 </body>
 </html>
