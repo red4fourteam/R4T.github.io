@@ -2,9 +2,9 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>R4T // OFFICIAL LIBRARY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RED FOUR TEAM // OFFICIAL</title>
     <style>
-        /* ОСНОВНОЙ СТИЛЬ */
         body {
             margin: 0;
             padding: 0;
@@ -12,121 +12,166 @@
             color: #ffffff;
             font-family: 'Consolas', monospace;
             overflow-x: hidden;
-            min-height: 100vh;
         }
 
         /* ШАПКА */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            top: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 50px;
+            background: rgba(0, 0, 0, 0.9);
             border-bottom: 2px solid #ff0000;
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+            z-index: 1000;
+            box-sizing: border-box;
         }
 
-        .logo-text {
-            font-size: 24px;
-            font-weight: bold;
-            color: #ff0000;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+        .logo-text { font-size: 20px; font-weight: bold; color: #ff0000; letter-spacing: 2px; }
+
+        nav { display: flex; gap: 15px; }
+
+        .btn-nav {
+            background: #000; color: #ff0000; border: 2px solid #ff0000;
+            padding: 8px 20px; cursor: pointer; transition: 0.3s;
+            text-decoration: none; font-weight: bold; text-transform: uppercase;
         }
 
-        /* НАВИГАЦИЯ */
-        nav {
-            display: flex;
-            gap: 20px;
+        .btn-nav:hover {
+            background: #ff0000; color: #000;
+            box-shadow: 0 0 15px #ff0000;
         }
 
-        .btn-r4t {
-            background: #000000;
-            color: #ff0000;
-            border: 2px solid #ff0000;
-            padding: 10px 25px;
-            font-family: 'Consolas', monospace;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.2);
-        }
-
-        .btn-r4t:hover {
-            background: #ff0000;
-            color: #000000;
-            box-shadow: 0 0 20px #ff0000, 0 0 40px rgba(255, 0, 0, 0.5);
-            transform: scale(1.05);
-        }
-
-        /* ГЛАВНЫЙ БЛОК */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        /* СЕКЦИИ */
+        section {
+            display: none; /* Скрываем все секции по умолчанию */
+            padding: 120px 50px 50px;
+            min-height: 100vh;
             text-align: center;
-            padding-top: 100px;
+            box-sizing: border-box;
         }
 
+        section.active { display: block; } /* Показываем только активную */
+
+        /* ГЛАВНАЯ */
         .main-logo {
-            width: 250px;
-            height: 250px;
-            margin-bottom: 30px;
-            border: 3px solid #ff0000;
-            border-radius: 50%;
-            padding: 10px;
-            box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+            width: 200px; height: 200px;
+            border: 3px solid #ff0000; border-radius: 50%;
+            padding: 10px; margin-bottom: 20px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
             animation: pulse 2s infinite;
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 0, 0, 0.4); }
-            50% { transform: scale(1.02); box-shadow: 0 0 50px rgba(255, 0, 0, 0.6); }
-            100% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 0, 0, 0.4); }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
-        h1 {
-            font-size: 50px;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 5px #000000;
+        /* КАРТОЧКИ ПРОДУКТОВ */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; margin-top: 40px;
         }
 
-        .status {
-            color: #888;
-            font-size: 14px;
-            margin-top: 20px;
+        .card {
+            background: rgba(20, 0, 0, 0.6);
+            border: 1px solid #ff0000;
+            padding: 25px; border-radius: 10px;
+            transition: 0.3s;
         }
 
-        .status span {
-            color: #00ff00;
+        .card:hover { transform: translateY(-10px); box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); }
+        .card h3 { color: #ff0000; margin-bottom: 15px; }
+
+        /* СТРАНИЦА ZEP */
+        .zep-box {
+            max-width: 800px; margin: 0 auto;
+            background: rgba(30, 0, 0, 0.4);
+            border: 2px solid #ff0000;
+            padding: 40px; border-radius: 20px;
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.2);
         }
+
+        .download-btn {
+            display: inline-block; margin-top: 30px;
+            background: #ff0000; color: #000;
+            padding: 20px 40px; font-size: 20px;
+            font-weight: bold; text-decoration: none;
+            border-radius: 5px; transition: 0.3s;
+        }
+
+        .download-btn:hover { background: #fff; box-shadow: 0 0 30px #fff; }
+
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-text">Red Four Team // System</div>
+        <div class="logo-text">RED FOUR TEAM // HUB</div>
         <nav>
-            <a href="#products" class="btn-r4t">Продукты</a>
-            <a href="#zep" class="btn-r4t">Запретник</a>
+            <a href="#" onclick="showSection('home')" class="btn-nav">Главная</a>
+            <a href="#" onclick="showSection('products')" class="btn-nav">Продукты</a>
+            <a href="#" onclick="showSection('zep')" class="btn-nav" style="border-color: #00ff00; color: #00ff00;">R4T ZEP</a>
         </nav>
     </header>
 
-    <main class="hero">
-        <!-- ТУТ БУДЕТ ТВОЙ ЛОГОТИП -->
-        <img src="logo.png" alt="R4T LOGO" class="main-logo" onerror="this.src='https://placeholder.com';">
-        
-        <h1>R4T // Библиотека</h1>
-        <p>Добро пожаловать в центр управления экосистемой. Доступ к модулям разрешен.</p>
-        
-        <div class="status">System Status: <span>Online</span> | Bypass Engine: <span>Ready</span></div>
-    </main>
+    <!-- ГЛАВНАЯ -->
+    <section id="home" class="active">
+        <img src="logo.png" class="main-logo" alt="R4T">
+        <h1>RED FOUR TEAM</h1>
+        <p>Центральный узел управления экосистемой. Все системы стабильны.</p>
+        <p style="color: #888;">Версия хаба: 2.1.0 // Статус: Online</p>
+    </section>
+
+    <!-- ПРОДУКТЫ (БИБЛИОТЕКА) -->
+    <section id="products">
+        <h1>БИБЛИОТЕКА ПРОГРАММ</h1>
+        <div class="grid">
+            <div class="card">
+                <h3>R4T TERMINAL</h3>
+                <p>Командный интерфейс для управления системой. Классика R4T.</p>
+                <a href="#" class="btn-nav">В разработке</a>
+            </div>
+            <div class="card">
+                <h3>R4T SENTINEL</h3>
+                <p>Антивирусный модуль и сканер подозрительных процессов.</p>
+                <a href="#" class="btn-nav">В разработке</a>
+            </div>
+            <div class="card">
+                <h3>R4T SMILE</h3>
+                <p>Твой гид по реальному миру. Найди парк и улыбнись.</p>
+                <a href="#" class="btn-nav">В разработке</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА ZEP -->
+    <section id="zep">
+        <div class="zep-box">
+            <h1 style="color: #00ff00;">R4T ZEP // BYPASS DPI</h1>
+            <p>Ультимативное решение для свободного интернета.</p>
+            <hr border="1" color="#ff0000">
+            <ul style="text-align: left; display: inline-block; color: #ccc;">
+                <li>🚀 YouTube в 4K без VPN</li>
+                <li>🎮 Фикс лагов Discord и Roblox</li>
+                <li>⚡ Максимальная скорость провайдера</li>
+                <li>🛡️ Полная анонимность трафика</li>
+            </ul>
+            <br>
+            <!-- СЮДА ВСТАВЬ ССЫЛКУ НА СВОЙ УСТАНОВЩИК -->
+            <a href="R4T_Zep_Setup.exe" class="download-btn">СКАЧАТЬ ZEP BETA</a>
+        </div>
+    </section>
+
+    <script>
+        function showSection(id) {
+            // Скрываем все секции
+            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+            // Показываем нужную
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
