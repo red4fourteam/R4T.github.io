@@ -2,26 +2,131 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>R4T | Workstation</title>
-    <link rel="stylesheet" href="style.css">
+    <title>R4T // OFFICIAL LIBRARY</title>
+    <style>
+        /* ОСНОВНОЙ СТИЛЬ */
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at center, #1a0000 0%, #000000 100%);
+            color: #ffffff;
+            font-family: 'Consolas', monospace;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* ШАПКА */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.8);
+            border-bottom: 2px solid #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* НАВИГАЦИЯ */
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-r4t {
+            background: #000000;
+            color: #ff0000;
+            border: 2px solid #ff0000;
+            padding: 10px 25px;
+            font-family: 'Consolas', monospace;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.2);
+        }
+
+        .btn-r4t:hover {
+            background: #ff0000;
+            color: #000000;
+            box-shadow: 0 0 20px #ff0000, 0 0 40px rgba(255, 0, 0, 0.5);
+            transform: scale(1.05);
+        }
+
+        /* ГЛАВНЫЙ БЛОК */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .main-logo {
+            width: 250px;
+            height: 250px;
+            margin-bottom: 30px;
+            border: 3px solid #ff0000;
+            border-radius: 50%;
+            padding: 10px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 0, 0, 0.4); }
+            50% { transform: scale(1.02); box-shadow: 0 0 50px rgba(255, 0, 0, 0.6); }
+            100% { transform: scale(1); box-shadow: 0 0 30px rgba(255, 0, 0, 0.4); }
+        }
+
+        h1 {
+            font-size: 50px;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px #000000;
+        }
+
+        .status {
+            color: #888;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        .status span {
+            color: #00ff00;
+        }
+    </style>
 </head>
 <body>
-    <header class="nav-container">
-        <div class="nav-title">R4T_System_v1.0.exe</div>
-        <div>
-            <a href="products.html" class="btn-r4t">Продукты</a>
-            <a href="info.html" class="btn-r4t">Информация</a>
-            <a href="fun.html" class="btn-r4t" style="color: #cc0000;">Прикольчики</a>
-        </div>
+
+    <header>
+        <div class="logo-text">Red Four Team // System</div>
+        <nav>
+            <a href="#products" class="btn-r4t">Продукты</a>
+            <a href="#zep" class="btn-r4t">Запретник</a>
+        </nav>
     </header>
 
-    <div class="content">
-        <div class="window-header"><span>Welcome_Screen</span><span>✕</span></div>
-        <div style="padding: 30px; text-align: center;">
-            <h1 style="font-family: 'Courier Prime', monospace; color: #000080;">RED FOUR TEAM</h1>
-            <p style="font-size: 1.1rem;">Добро пожаловать в центр управления R4T.<br>Используйте верхнее меню для доступа к модулям.</p>
-            <img src="https://vercel.app" style="width: 60px; margin-top: 20px;">
-        </div>
-    </div>
+    <main class="hero">
+        <!-- ТУТ БУДЕТ ТВОЙ ЛОГОТИП -->
+        <img src="logo.png" alt="R4T LOGO" class="main-logo" onerror="this.src='https://placeholder.com';">
+        
+        <h1>R4T // Библиотека</h1>
+        <p>Добро пожаловать в центр управления экосистемой. Доступ к модулям разрешен.</p>
+        
+        <div class="status">System Status: <span>Online</span> | Bypass Engine: <span>Ready</span></div>
+    </main>
+
 </body>
 </html>
