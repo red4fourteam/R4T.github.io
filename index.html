@@ -5,128 +5,131 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RED FOUR TEAM // HUB</title>
     <style>
+        /* БАЗОВЫЕ НАСТРОЙКИ */
         body {
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle at center, #1a0000 0%, #000000 100%);
+            background: radial-gradient(circle at center, #250000 0%, #000000 100%);
             color: #ffffff;
             font-family: 'Consolas', monospace;
             overflow-x: hidden;
             min-height: 100vh;
         }
 
+        /* АНИМАЦИЯ ПОЯВЛЕНИЯ СНИЗУ */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* АНИМАЦИЯ ПУЛЬСАЦИИ ЛОГО */
+        @keyframes logoPulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 0, 0, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 50px rgba(255, 0, 0, 0.8); }
+        }
+
+        .fade-in {
+            animation: fadeUp 1s ease-out forwards;
+        }
+
+        /* ШАПКА */
         header {
             position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            top: 0; width: 100%;
+            display: flex; justify-content: space-between; align-items: center;
             padding: 15px 50px;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.9);
             border-bottom: 2px solid #ff0000;
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.3);
             z-index: 1000;
             box-sizing: border-box;
         }
 
-        .logo-text {
-            font-size: 20px;
-            font-weight: bold;
-            color: #ff0000;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+        .logo-text { 
+            font-size: 22px; 
+            font-weight: bold; 
+            color: #ff0000; 
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px #ff0000;
         }
 
-        nav {
-            display: flex;
-            gap: 20px;
-        }
+        nav { display: flex; gap: 20px; }
 
         .btn-nav {
-            background: #000000;
-            color: #ff0000;
-            border: 2px solid #ff0000;
-            padding: 10px 25px;
-            font-family: 'Consolas', monospace;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+            background: #000; color: #ff0000; border: 2px solid #ff0000;
+            padding: 10px 25px; cursor: pointer; transition: 0.3s;
+            text-decoration: none; font-weight: bold; text-transform: uppercase;
         }
 
         .btn-nav:hover {
-            background: #ff0000;
-            color: #000000;
-            box-shadow: 0 0 20px #ff0000;
+            background: #ff0000; color: #000;
+            box-shadow: 0 0 25px #ff0000;
         }
 
-        .btn-zep {
-            border-color: #00ff00;
-            color: #00ff00;
-        }
+        .btn-zep { border-color: #00ff00; color: #00ff00; }
+        .btn-zep:hover { background: #00ff00; box-shadow: 0 0 25px #00ff00; }
 
-        .btn-zep:hover {
-            background: #00ff00;
-            color: #000;
-            box-shadow: 0 0 20px #00ff00;
-        }
-
+        /* СЕКЦИИ */
         section {
             display: none;
-            padding: 140px 50px 50px;
+            padding: 150px 20px 50px;
             min-height: 100vh;
             text-align: center;
             box-sizing: border-box;
         }
 
-        section.active {
-            display: block;
-        }
+        section.active { display: block; }
 
+        /* ГЛАВНАЯ СТРАНИЦА */
         .main-logo {
-            width: 220px;
-            height: 220px;
-            border: 3px solid #ff0000;
-            border-radius: 50%;
-            padding: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 40px rgba(255, 0, 0, 0.5);
+            width: 240px; height: 240px;
+            border: 4px solid #ff0000; border-radius: 50%;
+            padding: 15px; margin-bottom: 40px;
+            animation: logoPulse 3s infinite ease-in-out;
+            background: rgba(20, 0, 0, 0.5);
         }
 
-        .hero h1 { font-size: 45px; letter-spacing: 5px; margin-bottom: 15px; }
-        .hero p { font-size: 20px; color: #ccc; margin: 10px 0; }
+        h1 { 
+            font-size: 55px; 
+            letter-spacing: 8px; 
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+        }
 
-        /* ZEP PAGE */
-        .zep-container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: rgba(15, 0, 0, 0.6);
+        .slogan-1 { font-size: 24px; color: #aaaaaa; margin-bottom: 5px; }
+        .slogan-2 { font-size: 28px; color: #ff0000; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* СТРАНИЦА ZEP */
+        .zep-card {
+            max-width: 850px; margin: 0 auto;
+            background: rgba(20, 0, 0, 0.7);
             border: 2px solid #00ff00;
-            padding: 50px;
-            border-radius: 15px;
+            padding: 60px; border-radius: 20px;
+            box-shadow: 0 0 50px rgba(0, 255, 0, 0.15);
         }
 
         .download-btn {
-            display: inline-block;
-            margin-top: 30px;
-            background: #000;
-            color: #00ff00;
+            display: inline-block; margin-top: 40px;
+            background: #000; color: #00ff00;
             border: 3px solid #00ff00;
-            padding: 20px 50px;
-            font-size: 22px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s;
+            padding: 22px 60px; font-size: 24px;
+            font-weight: bold; text-decoration: none;
+            transition: 0.4s;
+            text-shadow: 0 0 10px #00ff00;
         }
 
-        .download-btn:hover {
-            background: #00ff00;
-            color: #000;
-            box-shadow: 0 0 35px #00ff00;
+        .download-btn:hover { 
+            background: #00ff00; color: #000;
+            box-shadow: 0 0 40px #00ff00;
+            transform: scale(1.05);
         }
+
     </style>
 </head>
 <body>
@@ -139,27 +142,30 @@
         </nav>
     </header>
 
-    <section id="home" class="hero active">
-        <img src="logo.png" class="main-logo" alt="R4T">
-        <h1>RED FOUR TEAM</h1>
-        <!-- Твои новые надписи -->
-        <p>R4T - команда которой нет</p>
-        <p style="color: #ff0000; font-weight: bold;">Red Four Team</p>
+    <!-- ГЛАВНАЯ -->
+    <section id="home" class="active">
+        <div class="fade-in">
+            <img src="logo.png" class="main-logo" alt="R4T">
+            <h1>RED FOUR TEAM</h1>
+            <p class="slogan-1">R4T - команда которой нет</p>
+            <p class="slogan-2">Red Four Team</p>
+        </div>
     </section>
 
+    <!-- ZEP -->
     <section id="zep">
-        <div class="zep-container">
-            <h1 style="color: #00ff00;">R4T ZEP // BYPASS ENGINE</h1>
-            <p>Ультимативное решение для свободного интернета.</p>
-            <p style="color: #00ff00; font-weight: bold;">ТЕПЕРЬ В БЕТЕ</p>
+        <div class="zep-card fade-in">
+            <h1 style="color: #00ff00; text-shadow: 0 0 20px #00ff00;">R4T ZEP // UNBLOCK</h1>
+            <p style="font-size: 22px;">Ультимативное решение для свободного интернета.</p>
+            <p style="color: #00ff00; font-weight: bold; font-size: 26px;">ТЕПЕРЬ В БЕТЕ</p>
             
-            <div style="text-align: left; display: inline-block; margin: 20px 0; color: #999;">
-                > Высокая скорость YouTube<br>
+            <div style="text-align: left; display: inline-block; margin: 30px 0; color: #888; font-size: 18px; line-height: 2;">
+                > Высокая скорость YouTube (4K)<br>
                 > Фикс лагов Discord и Roblox<br>
-                > Полная защита трафика
+                > Обход DPI без VPN
             </div>
 
-            <p style="font-size: 14px; color: #666;">Станьте тестировщиком! Почта: red4fourteam@gmail.com</p>
+            <p style="color: #555;">Станьте тестировщиком! Почта: red4fourteam@gmail.com</p>
 
             <a href="R4T_Zep_Setup.exe" class="download-btn">СКАЧАТЬ СЕЙЧАС</a>
         </div>
@@ -168,7 +174,14 @@
     <script>
         function showSection(id) {
             document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
+            const target = document.getElementById(id);
+            target.classList.add('active');
+            
+            // Сброс и перезапуск анимации при переключении
+            const content = target.querySelector('.fade-in');
+            content.style.animation = 'none';
+            content.offsetHeight; // триггер рефлоу
+            content.style.animation = null;
         }
     </script>
 
