@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RED FOUR TEAM // HUB</title>
     <style>
-        /* ОСНОВНОЙ СТИЛЬ ГЕЙТВЕЯ */
         body {
             margin: 0;
             padding: 0;
@@ -16,7 +15,6 @@
             min-height: 100vh;
         }
 
-        /* ШАПКА СВЯЗИ */
         header {
             position: fixed;
             top: 0;
@@ -45,7 +43,6 @@
             gap: 20px;
         }
 
-        /* КНОПКИ: ЧЕРНЫЕ ВНУТРИ, КРАСНАЯ ОБВОДКА */
         .btn-nav {
             background: #000000;
             color: #ff0000;
@@ -63,24 +60,20 @@
         .btn-nav:hover {
             background: #ff0000;
             color: #000000;
-            box-shadow: 0 0 20px #ff0000, 0 0 40px rgba(255, 0, 0, 0.4);
-            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff0000;
         }
 
-        /* ЗЕЛЕНАЯ КНОПКА ДЛЯ ZEP */
         .btn-zep {
             border-color: #00ff00;
             color: #00ff00;
-            box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
         }
 
         .btn-zep:hover {
             background: #00ff00;
-            color: #000000;
+            color: #000;
             box-shadow: 0 0 20px #00ff00;
         }
 
-        /* СЕКЦИИ КОНТЕНТА */
         section {
             display: none;
             padding: 140px 50px 50px;
@@ -91,15 +84,8 @@
 
         section.active {
             display: block;
-            animation: fadeIn 0.5s ease-in-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ГЛАВНАЯ СТРАНИЦА */
         .main-logo {
             width: 220px;
             height: 220px;
@@ -108,18 +94,12 @@
             padding: 10px;
             margin-bottom: 30px;
             box-shadow: 0 0 40px rgba(255, 0, 0, 0.5);
-            animation: pulse 2.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 40px rgba(255, 0, 0, 0.5); }
-            50% { transform: scale(1.03); box-shadow: 0 0 60px rgba(255, 0, 0, 0.7); }
         }
 
         .hero h1 { font-size: 45px; letter-spacing: 5px; margin-bottom: 15px; }
-        .hero p { color: #888; font-size: 18px; }
+        .hero p { font-size: 20px; color: #ccc; margin: 10px 0; }
 
-        /* СТРАНИЦА ZEP */
+        /* ZEP PAGE */
         .zep-container {
             max-width: 900px;
             margin: 0 auto;
@@ -127,91 +107,59 @@
             border: 2px solid #00ff00;
             padding: 50px;
             border-radius: 15px;
-            box-shadow: 0 0 50px rgba(0, 255, 0, 0.1);
         }
-
-        .zep-features {
-            text-align: left;
-            display: inline-block;
-            color: #bbbbbb;
-            list-style: none;
-            padding: 0;
-            font-size: 18px;
-            line-height: 2;
-            margin: 30px 0;
-        }
-
-        .tester-info {
-            margin-top: 40px;
-            padding: 25px;
-            border-top: 1px solid #333;
-            color: #999;
-            font-size: 15px;
-        }
-
-        .email-link { color: #ff0000; font-weight: bold; text-decoration: none; }
 
         .download-btn {
             display: inline-block;
-            margin-top: 20px;
-            background: #000000;
+            margin-top: 30px;
+            background: #000;
             color: #00ff00;
             border: 3px solid #00ff00;
             padding: 20px 50px;
             font-size: 22px;
             font-weight: bold;
             text-decoration: none;
-            border-radius: 8px;
             transition: 0.3s;
-            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
         }
 
         .download-btn:hover {
             background: #00ff00;
             color: #000;
             box-shadow: 0 0 35px #00ff00;
-            transform: scale(1.05);
         }
-
-        .status-box { color: #00ff00; font-size: 14px; margin-top: 20px; }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-text">RED FOUR TEAM // SYSTEM</div>
+        <div class="logo-text">RED FOUR TEAM</div>
         <nav>
             <a href="#" onclick="showSection('home')" class="btn-nav">Главная</a>
             <a href="#" onclick="showSection('zep')" class="btn-nav btn-zep">R4T ZEP</a>
         </nav>
     </header>
 
-    <!-- ГЛАВНЫЙ HUB -->
     <section id="home" class="hero active">
-        <img src="logo.png" class="main-logo" alt="R4T LOGO">
+        <img src="logo.png" class="main-logo" alt="R4T">
         <h1>RED FOUR TEAM</h1>
-        <p>Центральный узел управления экосистемой. Доступ ко всем модулям разрешен.</p>
-        <div class="status-box">System Status: ONLINE // Hub Version: 2.3.0</div>
+        <!-- Твои новые надписи -->
+        <p>R4T - команда которой нет</p>
+        <p style="color: #ff0000; font-weight: bold;">Red Four Team</p>
     </section>
 
-    <!-- СТРАНИЦА ZEP -->
     <section id="zep">
         <div class="zep-container">
-            <h1 style="color: #00ff00; letter-spacing: 4px;">R4T ZEP // BYPASS ENGINE</h1>
-            <p style="font-size: 20px;">Ультимативное решение для свободного интернета.</p>
-            <p style="color: #00ff00; font-weight: bold; font-size: 24px; text-transform: uppercase;">Теперь в бете!</p>
+            <h1 style="color: #00ff00;">R4T ZEP // BYPASS ENGINE</h1>
+            <p>Ультимативное решение для свободного интернета.</p>
+            <p style="color: #00ff00; font-weight: bold;">ТЕПЕРЬ В БЕТЕ</p>
             
-            <ul class="zep-features">
-                <li>> Высокая скорость YouTube (4K без VPN)</li>
-                <li>> Стабильная связь в Discord и Roblox</li>
-                <li>> Полная защита от DPI сканирования</li>
-                <li>> Максимальный приоритет трафика</li>
-            </ul>
-
-            <div class="tester-info">
-                Станьте тестировщиком! Если что-то будет работать некорректно, <br>
-                напишите нам на почту: <a href="mailto:red4fourteam@gmail.com" class="email-link">red4fourteam@gmail.com</a>
+            <div style="text-align: left; display: inline-block; margin: 20px 0; color: #999;">
+                > Высокая скорость YouTube<br>
+                > Фикс лагов Discord и Roblox<br>
+                > Полная защита трафика
             </div>
+
+            <p style="font-size: 14px; color: #666;">Станьте тестировщиком! Почта: red4fourteam@gmail.com</p>
 
             <a href="R4T_Zep_Setup.exe" class="download-btn">СКАЧАТЬ СЕЙЧАС</a>
         </div>
@@ -219,9 +167,7 @@
 
     <script>
         function showSection(id) {
-            // Скрываем все
             document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-            // Показываем выбранную
             document.getElementById(id).classList.add('active');
         }
     </script>
